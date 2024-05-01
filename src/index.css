@@ -1,18 +1,23 @@
 :root {
-  --font-family-headings: "Montserrat";
-  --font-family-body: "DM Sans";
-  --primary: #0ACF83;
-  --default: #000000;
-  --accent: #FFC120;
-  --dark-grey-1: #7F7F7F;
-  --grey: #BABABA;
-  --light-grey-2: #F3F3F3;
-  --light-grey-1: #F6F6F6;
-  --white: #FFFFFF;
+  --montserrat: 'Montserrat';
+  --background-color-dark: #252B42;
+  --background-color-light: #FAFAFA;
+  --text-color-light: #FFFFFF;
+  --text-color-light-grey: #BDBDBD;
+  --text-color-dark-grey:#737373;
+  --size-4px: 0.25rem;
+  --size-8px: 0.5rem;
+  --size-16px: 1rem;
+  --size-24px: 1.5rem;
+  --size-32px: 2rem;
+  --size-40px: 2.5rem;
 }
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-display: swap;
+}
+#root{
+  width: 100vw;
+  height: 100vh;
 }

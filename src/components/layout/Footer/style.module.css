@@ -1,0 +1,11 @@
+.footer{
+    background-color: var(--background-color-light);
+    color: var(--text-color-dark-grey);
+    font-size: var(--size-16px);
+    font-weight: bold;
+    font-family: var(--montserrat), sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--size-24px) var(--size-40px);
+}
