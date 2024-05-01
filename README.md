@@ -28,3 +28,4 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [Layout do Figma](https://www.figma.com/file/HGyURlkX0EgF1nO7r5ci5W/E-Commerce-UI-Kit-V1.1-(Community)?type=design&node-id=0-1&mode=design&t=wOVhb24UfdcnPx75-0)
