@@ -1,16 +1,22 @@
 :root {
   --montserrat: 'Montserrat';
+  --color-primary: #23A6F0;
   --background-color-dark: #252B42;
-  --background-color-light: #FAFAFA;
+  --background-color-light: #F9F9F9;
   --text-color-light: #FFFFFF;
   --text-color-light-grey: #BDBDBD;
   --text-color-dark-grey:#737373;
+  --text-color-dark-blue:#252B42;
+  --light-grey-2: #E6E6E6;
   --size-4px: 0.25rem;
   --size-8px: 0.5rem;
+  --size-14px: 0.875rem;
   --size-16px: 1rem;
+  --size-18px: 1.125rem;
   --size-24px: 1.5rem;
   --size-32px: 2rem;
   --size-40px: 2.5rem;
+  --size-50px: 3.125rem;
 }
 *{
   padding: 0;
@@ -18,6 +24,6 @@
   box-sizing: border-box;
 }
 #root{
-  width: 100vw;
-  height: 100vh;
+  height: 76vh;
+  min-height: fit-content;
 }

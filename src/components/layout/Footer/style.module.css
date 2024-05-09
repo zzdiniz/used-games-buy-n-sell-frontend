@@ -8,4 +8,7 @@
     justify-content: center;
     align-items: center;
     padding: var(--size-24px) var(--size-40px);
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }

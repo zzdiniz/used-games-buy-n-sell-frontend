@@ -1,0 +1,12 @@
+.input{
+    width: 100%;
+    max-width: 28.125rem;
+    height: var(--size-50px);
+    background-color: var(--background-color-light);
+    border: 1px solid var(--light-grey-2);
+    color: var(--text-color-dark-grey);
+    font-family: var(--montserrat);
+    font-size: var(--size-14px);
+    border-radius: var(--size-4px);
+    padding: var(--size-18px);
+}
