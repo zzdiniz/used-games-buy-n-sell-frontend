@@ -53,5 +53,16 @@ img{
     padding: var(--size-18px);
     border: none;
     color: var(--text-color-light);
-    margin-top: var(--size-8px)
+    margin-top: var(--size-8px);
+    transition: background-color 0.3s ease;
+}
+.submit:hover{
+    background-color: var(--color-primary-hover);
+}
+
+.login, .login > a{
+    font-family: var(--montserrat);
+    font-size: var(--size-14px);
+    color: var(--text-color-light);
+    margin-top: var(--size-16px);
 }
