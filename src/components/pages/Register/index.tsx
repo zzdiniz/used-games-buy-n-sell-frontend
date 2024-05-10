@@ -2,16 +2,18 @@ import Input from "../../form/Input";
 import customStyles from "./styles.module.css";
 import imageSrc from "../../../images/controlbg.jpg";
 import { Link } from "react-router-dom";
-import { ChangeEvent, useState,FormEvent } from "react";
+import { ChangeEvent, useState,FormEvent, useContext } from "react";
+import { UserContext } from "../../../context/UserContext";
 const Register = () => {
   const [user, setUser] = useState({});
+  const registerUser = useContext(UserContext)
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setUser({ ...user, [name]: value });
   };
   const handleSubimit = (event: FormEvent<HTMLFormElement>)=>{
     event.preventDefault()
-    console.log(user)
+    registerUser(user)
   }
   return (
     <>
