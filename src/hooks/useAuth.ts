@@ -44,13 +44,37 @@ const useAuth = () =>{
         localStorage.setItem('token',data.token)
     }
 
-    const logout = async () => {
+    const logout = () => {
       setIsAuthenticated(false)
       localStorage.removeItem('token')
       setFlashMessage('Successfully logged out','success')
       navigate('/')
     }
-    return {registerUser,isAuthenticated,logout}
+    
+    const login = async (user: User | {}) =>{
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      };
+      try {
+        const response = await fetch(`${baseURL}/users/login`, requestOptions);
+        const data = await response.json();
+        setFlashMessage(
+          response.ok ? "Successfully logged in" : data.message,
+          response.ok ? "success" : "error"
+        );
+        if(response.ok){
+          authUser(data)
+          navigate('/')
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    return {registerUser,isAuthenticated,logout,login}
 }
 
 export default useAuth
