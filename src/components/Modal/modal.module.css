@@ -1,0 +1,44 @@
+.modalWrapper{
+    position: absolute;
+    z-index: 3;
+    top:57px;
+    right: 0;
+    padding-right: var(--size-24px);
+    display: flex;
+    flex-direction: column;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2))
+}
+.triangle{
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid var(--background-color-light);
+    align-self: flex-end;
+    margin-right: 1.25rem;
+}
+.modalContainer{
+    width: 200px;
+    height: 100px;
+    background-color: var(--background-color-light);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: var(--size-16px)
+}
+.logoutBtn{
+    background-color: var(--color-primary);
+    width: 100%;
+    max-width: 28.125rem;
+    height: var(--size-50px);
+    font-family: var(--montserrat);
+    font-size: var(--size-14px);
+    border-radius: var(--size-4px);
+    padding: var(--size-18px);
+    border: none;
+    color: var(--text-color-light);
+    margin-top: var(--size-8px);
+    transition: background-color 0.3s ease;
+}

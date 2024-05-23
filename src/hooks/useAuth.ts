@@ -1,6 +1,6 @@
 import { User } from "../types/User";
 import useFlashMessage from "../hooks/useFlashMessage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const baseURL = "http://localhost:3000";
@@ -8,8 +8,14 @@ const baseURL = "http://localhost:3000";
 const useAuth = () =>{
     const [isAuthenticated,setIsAuthenticated] = useState(false)
     const navigate = useNavigate()
+    const { setFlashMessage } = useFlashMessage();
+    useEffect(()=>{
+      const token = localStorage.getItem('token')
+      if(token){
+        setIsAuthenticated(true)
+      }
+    },[])
     const registerUser = async (user: User | {}) => {
-        const { setFlashMessage } = useFlashMessage();
         const requestOptions = {
           method: "POST",
           headers: {
@@ -20,8 +26,6 @@ const useAuth = () =>{
         try {
           const response = await fetch(`${baseURL}/users/register`, requestOptions);
           const data = await response.json();
-          const ok = response.ok;
-          console.log(ok);
           setFlashMessage(
             response.ok ? "Registration completed successfully" : data.message,
             response.ok ? "success" : "error"
@@ -39,7 +43,14 @@ const useAuth = () =>{
         setIsAuthenticated(true)
         localStorage.setItem('token',data.token)
     }
-    return {registerUser,isAuthenticated}
+
+    const logout = async () => {
+      setIsAuthenticated(false)
+      localStorage.removeItem('token')
+      setFlashMessage('Successfully logged out','success')
+      navigate('/')
+    }
+    return {registerUser,isAuthenticated,logout}
 }
 
 export default useAuth

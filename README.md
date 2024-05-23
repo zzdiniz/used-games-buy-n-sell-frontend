@@ -29,3 +29,5 @@ export default {
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 - [Layout do Figma](https://www.figma.com/file/bINPSihCEqyjsQnhzUyjd3/E-commerce-UI---Figma-Ecommerce-UI-Kit-(Demo-Version)-(Community)?type=design&node-id=69-5241&mode=design&t=baTrHrFS4nrt5ZbG-0)
+
+Bearer ey12334asd...(token)
