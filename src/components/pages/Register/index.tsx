@@ -6,7 +6,8 @@ import { ChangeEvent, useState,FormEvent, useContext } from "react";
 import { UserContext } from "../../../context/UserContext";
 const Register = () => {
   const [user, setUser] = useState({});
-  const registerUser = useContext(UserContext)
+  const useAuth = useContext(UserContext)
+  const {registerUser} = useAuth()
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setUser({ ...user, [name]: value });

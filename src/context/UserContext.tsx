@@ -1,11 +1,11 @@
 import { ReactNode, createContext } from "react";
-import registerUser from "../utils/registerUser";
+import useAuth from "../hooks/useAuth";
 
-const UserContext = createContext(registerUser)
+const UserContext = createContext(useAuth)
 
 const UserProvider = ({ children }: { children: ReactNode }) => {
   return (
-    <UserContext.Provider value={registerUser}>{children}</UserContext.Provider>
+    <UserContext.Provider value={useAuth}>{children}</UserContext.Provider>
   );
 };
 
