@@ -7,6 +7,7 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import { UserProvider } from "./context/UserContext";
 import Message from "./components/layout/Message";
+import Profile from "./components/pages/Profile";
 function App() {
   return (
     <Router>
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<Profile />}/>
           </Routes>
           <Footer />
       </UserProvider>
