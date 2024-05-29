@@ -1,0 +1,9 @@
+.editForm{
+    position: relative;
+}
+.editFormTitle{
+    color: var(--text-color-dark-blue);
+}
+.editFormSubTitle{
+    color: var(--text-color-dark-grey);
+}
