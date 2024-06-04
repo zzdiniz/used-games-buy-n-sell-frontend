@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 import customStyles from "./input.module.css";
 interface InputProps {
-  type: "text" | "number" | "email" | "password";
+  type: "text" | "number" | "email" | "password" | "file";
   placeholder?: string;
   name: string;
   value?: string | number;
