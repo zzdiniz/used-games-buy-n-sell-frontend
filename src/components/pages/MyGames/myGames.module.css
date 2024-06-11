@@ -1,0 +1,7 @@
+.gamesGrid{
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--size-24px) var(--size-40px);
+    background-color: var(--light-grey-1);
+    gap: var(--size-24px);
+}

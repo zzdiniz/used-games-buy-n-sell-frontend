@@ -2,6 +2,7 @@
   --montserrat: 'Montserrat';
   --color-primary: #23A6F0;
   --color-primary-hover: #1b87c4;
+  --color-secondary: #23856D;
   --color-success: #2DC071;
   --color-error: #E0232E;
   --background-color-dark: #252B42;
@@ -10,6 +11,7 @@
   --text-color-light-grey: #BDBDBD;
   --text-color-dark-grey:#737373;
   --text-color-dark-blue:#252B42;
+  --light-grey-1: #FAFAFA;
   --light-grey-2: #E6E6E6;
   --size-4px: 0.25rem;
   --size-8px: 0.5rem;
