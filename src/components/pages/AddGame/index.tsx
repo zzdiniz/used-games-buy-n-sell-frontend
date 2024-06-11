@@ -3,11 +3,14 @@ import { Game } from "../../../types/Game";
 import customStyles from "../Register/styles.module.css";
 import Input from "../../form/Input";
 import addGameStyles from "./addGame.module.css";
+import addGame from "../../../utils/addGame";
+import { useNavigate } from "react-router-dom";
 
 const AddGame = () => {
   const [game, setGame] = useState<Game | Object>({});
   const [preview, setPreview] = useState<Array<string>>([]);
-  const [currentPreview,setCurrentPreview] = useState(0)
+  const [currentPreview, setCurrentPreview] = useState(0);
+  const navigate = useNavigate()
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -23,10 +26,27 @@ const AddGame = () => {
     }
   };
 
+  const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = event.target;
+    setGame({ ...game, [name]: value });
+  };
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("game->", game);
-    //registerUser(user)
+    const formData = new FormData();
+    const gameData = game as Game;
+
+    Object.entries(gameData).forEach(([key, value]) => {
+      if (value === undefined) {
+        return;
+      }
+      if (key === "images" && Array.isArray(value)) {
+        value.forEach((image) => formData.append("images", image));
+      }
+      formData.append(key, value);
+    });
+    addGame(formData)
+    navigate('/games/my-games')
   };
 
   return (
@@ -41,7 +61,9 @@ const AddGame = () => {
             preview.map((image, index) => {
               return (
                 <img
-                  className={`${addGameStyles.image} ${index === currentPreview && addGameStyles.currentImage}`}
+                  className={`${addGameStyles.image} ${
+                    index === currentPreview && addGameStyles.currentImage
+                  }`}
                   src={image}
                   alt={`Preview ${index}`}
                   key={index}
@@ -51,17 +73,28 @@ const AddGame = () => {
           ) : (
             <input
               type="file"
-              id="imageInput"
+              id="images"
+              name="images"
               accept="image/*"
               onChange={handleFileChange}
               multiple
             />
           )}
           <div className={addGameStyles.indicatorsRow}>
-            {preview.map((_,index)=>{
-              return <button className={addGameStyles.indicator} onClick={()=>setCurrentPreview(index)} key={index}>
-                <img className={addGameStyles.indicatorImage} src={preview[index]} alt="" />
-              </button>
+            {preview.map((_, index) => {
+              return (
+                <button
+                  className={addGameStyles.indicator}
+                  onClick={() => setCurrentPreview(index)}
+                  key={index}
+                >
+                  <img
+                    className={addGameStyles.indicatorImage}
+                    src={preview[index]}
+                    alt=""
+                  />
+                </button>
+              );
             })}
           </div>
         </div>
@@ -79,7 +112,7 @@ const AddGame = () => {
             handleChange={handleInputChange}
           />
           <Input
-            type="text"
+            type="number"
             name="price"
             placeholder="Price"
             handleChange={handleInputChange}
@@ -88,6 +121,7 @@ const AddGame = () => {
             name="platform"
             form="gameForm"
             className={addGameStyles.selectInput}
+            onChange={handleSelectChange}
           >
             <option className={addGameStyles.selectOption} value="">
               Choose the game platform
