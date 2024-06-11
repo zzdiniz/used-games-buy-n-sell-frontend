@@ -16,3 +16,49 @@
 .selectOption:first-child{
     display: none;
 }
+.previewWrapper{
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.image{
+    position: initial;
+    width: 506px;
+    height: 450px;
+    display: none;
+    object-fit: fill;
+}
+.currentImage{
+    display: block;
+}
+.addForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--size-32px) var(--size-50px);
+}
+.indicatorsRow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-14px);
+    padding-top: var(--size-16px)
+}
+.indicator{
+    width: 100px;
+    height: 75px;
+    border:none;
+    cursor: pointer;
+}
+.indicator:hover{
+    border: 1px solid black;
+}
+.indicatorImage{
+    position: initial;
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+}
